@@ -169,12 +169,7 @@ body {
         background: linear-gradient(45deg, #4CAF50, #FF69B4); /* Applies a diagonal gradient background from cyan to blue on hover */
         box-shadow: 0px 0px 20px #000000; /* Adds a glowing cyan shadow around the element on hover */
     }
-    
-    .upcoming-menu:hover {
-        box-shadow: 0 0 25px #FF69B4; /* Stronger glow on hover */
-    }
-    
-    .upcoming-menu h2 {
+     .upcoming-menu h2 {
         color: #ffffff; /* Sets the text color to white */
         margin-bottom: 30px; /* Adds a 30px margin to the bottom of the element */
     }
