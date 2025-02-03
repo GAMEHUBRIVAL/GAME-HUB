@@ -1,0 +1,505 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    background-image: url('game hub-1.jpg'); /* Set the background image */
+    background-size: cover; /* Ensure the background image covers the entire viewport */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the background image from tiling */
+    margin: 0; /* Remove default margin */
+    overflow: hidden; /* Hide overflow */
+    height: 100%; /* Set the body's height to 100% of the viewport */
+    width: 100%; /* Set the body's width to 100% of the viewport */
+    font-family: 'Arial', sans-serif;
+}
+
+.navbar {
+    position: fixed; /* Fixes the navbar in place, so it doesn't scroll with the page */
+    top: 8px; /* Positions the navbar 20px from the top of the viewport */
+    left: 50%; /* Centers the navbar horizontally */
+    transform: translateX(-50%); /* Adjusts the position to center the navbar */
+    height: 115px; /* Sets the height of the navbar to 115px */
+    width: 85%; /* Sets the width of the navbar to 80px of the viewport width */
+    background: rgba(0, 0, 0, 0.2); /* Applies a semi-transparent white background */
+    backdrop-filter: blur(10px); /* Adds a blur effect to the background, creating a glassmorphic effect */
+    border-radius: 10px; /* Rounds the corners of the navbar */
+    padding: 10px; /* Adds padding inside the navbar */
+    text-align: center; /* Centers the text inside the navbar */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for a floating effect */
+}
+
+.navbar ul {
+    list-style: none; /* Removes the default bullet points from the list items */
+    padding: 0; /* Removes the default padding from the unordered list */
+    margin: 0; /* Removes the default margin from the unordered list */
+    display: flex; /* Uses flexbox layout for the unordered list */
+    justify-content: center; /* Centers the list items horizontally within the navbar */
+    align-items: center; /* Ensures the list items are centered vertically */
+}
+
+.navbar ul li {
+    margin: 33px; /* Adds 15 pixels of horizontal margin to both sides of each list item */
+}
+
+.butt {
+    text-decoration: none; /* Removes underline from the text */
+    color: white; /* Sets the text color to white */
+    font-size: 18px; /* Sets the font size to 18px */
+    font-weight: bold; /* Makes the text bold */
+    padding: 10px; /* Adds 10px padding around the text */
+}
+
+.navbar::after {
+    content: ""; /* Inserts an empty content, necessary for pseudo-elements */
+    display: block; /* Ensures the pseudo-element behaves like a block element */
+    height: 40px; /* Sets the height of the pseudo-element to 40px */
+    width: 100%; /* Sets the width of the pseudo-element to 100% of the navbar's width */
+    background: rgba(0, 0, 0, 0.2); /* Applies a semi-transparent white background with higher opacity */
+    transform: scaleY(-1); /* Flips the pseudo-element vertically */
+    border-radius: 10px; /* Rounds the corners of the pseudo-element */
+    filter: blur(8px); /* Increases the blur effect */
+    opacity: 0.7; /* Increases the opacity to make the effect more noticeable */
+}
+
+button {
+    background-color: #4CAF50; /* Sets the background color of the button to a green shade */
+    color: white; /* Sets the text color to white */
+    padding: 15px 32px; /* Adds 15px padding to the top and bottom, and 32px padding to the left and right */
+    font-size: 18px; /* Sets the font size of the button text to 16px */
+    border: none; /* Removes any default border around the button */
+    cursor: pointer; /* Changes the cursor to a pointer when hovering over the button */
+    border-radius: 10px; /* Rounds the corners of the button slightly */
+    border-top-left-radius: 20px; /* Adds a larger rounded corner to the top-left of the button */
+    border-bottom-right-radius: 20px; /* Adds a larger rounded corner to the bottom-right of the button */
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #42890f; /* Changes the background color to pink when the button is hovered over */
+    border-top-right-radius: 20px; /* Adds a larger rounded corner to the top-right of the button */
+    border-bottom-left-radius: 20px; /* Adds a larger rounded corner to the bottom-left of the button */
+    transition: 0.3s;
+}
+
+.game-pad {
+    position: fixed; /* Positions the element absolutely relative to its nearest positioned ancestor */
+    justify-content: center; /* This property doesn't apply to absolutely positioned elements */
+    margin-left: 2rem; /* Adds a left margin of 2rem */
+    bottom: 2rem; /* Positions the element 1rem from the bottom of the container */
+    right: 2rem; /* Positions the element 2rem from the right of the container */
+    top: 25rem; /* Positions the element 24.5rem from the top of the container */
+    left: 75rem; /* Positions the element 75rem from the left of the container */
+}
+
+.game-pad-2 {
+    position: fixed; /* Positions the element absolutely relative to its nearest positioned ancestor */
+    bottom: 30rem; /* Positions the element 30rem from the bottom of the container */
+    left: 4rem; /* Positions the element 5rem from the left of the container */
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* Uses Arial or a sans-serif font as a fallback */
+    background-color: #0d0d0d; /* Sets the background color to a dark shade (#0d0d0d) */
+    color: white; /* Sets the text color to white for high contrast */
+    text-align: center; /* Centers the text horizontally */
+    margin: 0; /* Removes the default margin around the body */
+    height: 100vh; /* Sets the height to 100% of the viewport height */
+    display: flex; /* Applies flexbox layout to the body */
+    justify-content: center; /* Centers the content horizontally */
+    align-items: center; /* Centers the content vertically */
+}
+
+.upcoming-menu {
+    display: none; /* Hides the menu by default */
+    position: fixed; /* Fixes the menu's position relative to the viewport */
+    top: 0; /* Positions the menu at the top of the viewport */
+    left: 0; /* Positions the menu at the left side of the viewport */
+    width: 100%; /* Sets the menu's width to 100% of the viewport */
+    height: 100%; /* Sets the menu's height to 100% of the viewport */
+    z-index: 1000; /* Ensures the menu appears above other elements */
+    justify-content: center; /* Centers content horizontally inside the menu (flexbox property) */
+    align-items: center; /* Centers content vertically inside the menu (flexbox property) */
+    transition: 1s; /* Adds a transition effect for when the menu is displayed */
+    margin-left: 22rem; /* Adds a left margin of 20rem */
+    margin-top: 10rem; /* Adds a top margin of 5rem */
+}
+
+.upcoming-content {
+    background: rgba(0, 0, 0, 0.2); /* Applies a semi-transparent white background */
+    backdrop-filter: blur(10px); /* Adds a blur effect to the background, creating a glassmorphic effect */
+    border: 2px solid #FF69B4; /* Adds a solid cyan border around the element */
+    border-radius: 10px; /* Rounds the corners of the element */
+    padding: 20px; /* Adds padding inside the element */
+    text-align: center; /* Centers the text within the element */
+    box-shadow: 0px 20px 20px #000000; /* Adds a cyan glow effect around the element */
+    width: 50%; /* Sets the width of the element to 50% of its containing element */
+    animation: fadeIn 0.5s ease-in-out; /* Adds a fade-in animation to the element */
+}
+
+.upcoming-content ul{
+    list-style: none; /* Removes default bullet points from the list */
+    padding: 0; /* Removes default padding from the list */
+}
+
+.upcoming-content ul li {
+    margin: 5px; /* Adds 10px of vertical margin above and below each list item */
+}
+
+.upcoming-content ul li a{
+    text-decoration: none; /* Removes the default underline from the links */
+    font-size: 18px; /* Sets the font size of the links to 20px */
+    color: white; /* Sets the text color to white */
+    padding: 10px; /* Adds 10px of padding inside the links */
+    display: block; /* Makes the links behave like block elements, taking up the full width of their container */
+    background: linear-gradient(45deg, #FF69B4, #4CAF50); /* Applies a diagonal gradient background from blue (#00f) to cyan (#0ff) */
+    border-radius: 10px; /* Rounds the corners of the links by 5px */
+}
+    .upcoming-content ul li a {
+        text-decoration: none; /* Removes the default underline from the links */
+        font-family:'Orbitron', sans-serif ;
+        font-size: 18px; /* Sets the font size of the links to 20px */
+        color: white; /* Sets the text color to white */
+        padding: 10px; /* Adds 10px of padding inside the links */
+        display: block; /* Makes the links behave like block elements, taking up the full width of their container */
+        background: linear-gradient(45deg, #FF69B4, #4CAF50); /* Applies a diagonal gradient background from blue (#00f) to cyan (#0ff) */
+        border-radius: 10px; /* Rounds the corners of the links by 5px */
+        transition: 0.3s; /* Adds a smooth transition effect for any changes over 0.3 seconds */
+    }
+    
+    .upcoming-content ul li a:hover {
+        background: linear-gradient(45deg, #4CAF50, #FF69B4); /* Applies a diagonal gradient background from cyan to blue on hover */
+        box-shadow: 0px 0px 20px #000000; /* Adds a glowing cyan shadow around the element on hover */
+    }
+    
+    .upcoming-menu:hover {
+        box-shadow: 0 0 25px #FF69B4; /* Stronger glow on hover */
+    }
+    
+    .upcoming-menu h2 {
+        color: #ffffff; /* Sets the text color to white */
+        margin-bottom: 30px; /* Adds a 30px margin to the bottom of the element */
+    }
+    .upcoming-content p{
+    display: block;
+    padding: 10px;
+    margin: 5px 0;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 16px;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    border-radius: 5px;
+    transition: 0.3s;
+    }
+   
+    
+    .upcoming-content p:hover {
+        color: white;
+        cursor: none;
+        transform: scale(1.2); /* Zoom effect */
+        box-shadow: 0 0 10px cyan; /* Glowing effect */
+        outline: none; /* Remove default outline */
+        background: rgba(0, 0, 0, 0.745);;
+        backdrop-filter: blur(10px);
+        transition: 1s;
+    }
+    
+    .upcoming-close-btn {
+        position: center; /* Positions the button absolutely within the .menu-content element */
+        top: 0.5rem; /* Positions the button 1rem from the top of the .menu-content element */
+        right: 45rem; /* Positions the button 1rem from the right of the .menu-content element */
+        font-size: 50px; /* Sets the font size of the button text to 30px */
+        color: rgb(255, 0, 0); /* Sets the text color to white */
+        cursor: pointer; /* Changes the cursor to a pointer when hovering over the button */
+    }
+    .upcoming-close-btn:hover {
+        text-shadow: 0px 20px 20px rgb(255, 0, 0);
+        color: black;
+        transition: 1s;
+        
+
+    }
+    
+    .menu {
+        display: none; /* Hides the menu by default */
+        position: fixed; /* Fixes the menu's position relative to the viewport */
+        top: 0; /* Positions the menu at the top of the viewport */
+        left: 0; /* Positions the menu at the left side of the viewport */
+        width: 100%; /* Sets the menu's width to 100% of the viewport */
+        height: 100%; /* Sets the menu's height to 100% of the viewport */
+        z-index: 1000; /* Ensures the menu appears above other elements */
+        justify-content: center; /* Centers content horizontally inside the menu (flexbox property) */
+        align-items: center; /* Centers content vertically inside the menu (flexbox property) */
+        transition: 1s; /* Adds a transition effect for when the menu is displayed */
+        margin-left: 22rem; /* Adds a left margin of 20rem */
+        margin-top: 10rem; /* Adds a top margin of 5rem */
+    }
+    
+    .menu-content {
+        background: rgba(25, 22, 63, 0.2); /* Applies a semi-transparent white background */
+        backdrop-filter: blur(10px); /* Adds a blur effect to the background, creating a glassmorphic effect */
+        border: 2px solid #0ff; /* Adds a solid cyan border around the element */
+        border-radius: 10px; /* Rounds the corners of the element */
+        padding: 20px; /* Adds padding inside the element */
+        text-align: center; /* Centers the text within the element */
+        box-shadow: 0px 0px 20px #0ff; /* Adds a cyan glow effect around the element */
+        width: 50%; /* Sets the width of the element to 50% of its containing element */
+        animation: fadeIn 0.5s ease-in-out; /* Adds a fade-in animation to the element */
+    }
+    
+    .menu-content h2 {
+        color: #ffffff; /* Sets the text color to a green shade (#4CAF50) */
+        margin-bottom: 30px; /* Adds a 15px margin to the bottom of the element */
+    }
+    
+    .menu ul {
+        list-style: none; /* Removes default bullet points from the list */
+        padding: 0; /* Removes default padding from the list */
+    }
+    
+    .menu ul li {
+        margin: 5px; /* Adds 10px of vertical margin above and below each list item */
+    }
+    
+    .menu ul li a {
+        font-family: 'Orbitron', sans-serif;
+        text-decoration: none; /* Removes the default underline from the links */
+        font-size: 18px; /* Sets the font size of the links to 20px */
+        color: white; /* Sets the text color to white */
+        padding: 10px; /* Adds 10px of padding inside the links */
+        display: block; /* Makes the links behave like block elements, taking up the full width of their container */
+        background: linear-gradient(45deg, #00f, #0ff); /* Applies a diagonal gradient background from blue (#00f) to cyan (#0ff) */
+        border-radius: 10px; /* Rounds the corners of the links by 5px */
+        transition: 0.3s; /* Adds a smooth transition effect for any changes over 0.3 seconds */
+    }
+    
+    .menu ul li a:hover {
+        background: linear-gradient(45deg, #0ff, #00f); /* Applies a diagonal gradient background from cyan to blue on hover */
+        box-shadow: 0px 0px 20px #0ff; /* Adds a glowing cyan shadow around the element on hover */
+    }
+    
+    .close-btn {
+        position: center; /* Positions the button absolutely within the .menu-content element */
+        top: 0.5rem; /* Positions the button 1rem from the top of the .menu-content element */
+        right: 45rem; /* Positions the button 1rem from the right of the .menu-content element */
+        font-size: 50px; /* Sets the font size of the button text to 30px */
+        color: rgb(255, 0, 0); /* Sets the text color to white */
+        cursor: pointer; /* Changes the cursor to a pointer when hovering over the button */
+    }
+    .close-btn:hover{
+        text-shadow: 0px 20px 20px rgb(255, 0, 0);
+        color: black;
+        transition: 1s
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0; /* Starts with the element fully transparent */
+            transform: scale(0.8); /* Starts with the element slightly scaled down */
+        }
+        to {
+            opacity: 1; /* Ends with the element fully opaque */
+            transform: scale(1); /* Ends with the element at its normal size */
+        }
+    }
+    
+
+    .about {
+        display: none; /* Hides the menu by default */
+        position: fixed; /* Fixes the menu's position relative to the viewport */
+        top: 0; /* Positions the menu at the top of the viewport */
+        left: 0; /* Positions the menu at the left side of the viewport */
+        width: 100%; /* Sets the menu's width to 100% of the viewport */
+        height: 100%; /* Sets the menu's height to 100% of the viewport */
+        z-index: 1000; /* Ensures the menu appears above other elements */
+        justify-content: center; /* Centers content horizontally inside the menu (flexbox property) */
+        align-items: center; /* Centers content vertically inside the menu (flexbox property) */
+        transition: 1s; /* Adds a transition effect for when the menu is displayed */
+        margin-left: 22rem; /* Adds a left margin of 20rem */
+        margin-top: 10rem; /* Adds a top margin of 5rem */
+    }
+    
+    .about-content {
+        
+        background: rgba(0, 0, 0, 0.2); /* Applies a semi-transparent white background */
+        backdrop-filter: blur(10px); /* Adds a blur effect to the background, creating a glassmorphic effect */
+        border: 2px solid #FF69B4; /* Adds a solid cyan border around the element */
+        border-radius: 10px; /* Rounds the corners of the element */
+        padding: 20px; /* Adds padding inside the element */
+        text-align: center; /* Centers the text within the element */
+        box-shadow: 0px 20px 20px #000000; /* Adds a cyan glow effect around the element */
+        width: 50%; /* Sets the width of the element to 50% of its containing element */
+        animation: fadeIn 0.5s ease-in-out; /* Adds a fade-in animation to the element */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for a floating effect */
+        box-shadow: 0px 20px 20px black;
+    }
+    
+    .about h2 {
+        color: #ffffff; /* Sets the text color to white */
+        margin-bottom: 30px; /* Adds a 30px margin to the bottom of the element */
+    }
+    .about-content p{
+        font-family: 'Poppins', sans-serif;
+        font-style: normal;
+        text-transform: uppercase;
+        display: block;
+        padding: 10px;
+        margin: 5px 0;
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        font-size: 16px;
+        border: 1px solid rgba(0, 255, 255, 0.3);
+        border-radius: 5px;
+        transition: 0.3s;
+        }
+       
+        
+        .about-content p:hover {
+            color: white;
+            cursor: default;
+            transform: scale(1.2); /* Zoom effect */
+            box-shadow: 0 0 10px cyan; /* Glowing effect */
+            outline: none; /* Remove default outline */
+            background: rgba(0, 0, 0, 0.745);;
+            backdrop-filter: blur(10px);
+            transition: 1s;
+        }
+        .about-team{
+            color: aqua;
+            font-style: normal;
+        }
+        .about-team:hover{
+            text-shadow: 0px 5px 20px rgb(0, 0, 0);
+        }
+        .about-team-role{
+            color: yellow;
+        }
+    .about-close-btn {
+        cursor: pointer; /* Ensures the cursor changes to pointer when hovering */
+        position: center; /* Positions the button absolutely within the .menu-content element */
+        top: 0.5rem; /* Positions the button 0.5rem from the top of the .menu-content element */
+        right: 45rem; /* Positions the button 45rem from the right of the .menu-content element */
+        font-size: 50px; /* Sets the font size of the button text */
+        color: rgb(255, 0, 0); /* Sets the text color to white */
+    }
+    .about-close-btn:hover{
+        text-shadow: 0px 20px 20px rgb(255, 0, 0);
+        color: black;
+        transition: 1s
+    }
+    
+    .contact-menu {
+        
+        display: none; /* Hides the menu by default */
+        position: fixed; /* Fixes the menu's position relative to the viewport */
+        top: 0; /* Positions the menu at the top of the viewport */
+        left: 0; /* Positions the menu at the left side of the viewport */
+        width: 100%; /* Sets the menu's width to 100% of the viewport */
+        height: 100%; /* Sets the menu's height to 100% of the viewport */
+        z-index: 1000; /* Ensures the menu appears above other elements */
+        justify-content: center; /* Centers content horizontally inside the menu (flexbox property) */
+        align-items: center; /* Centers content vertically inside the menu (flexbox property) */
+        transition: 03s; /* Adds a transition effect for when the menu is displayed */
+        margin-left: 22rem; /* Adds a left margin of 20rem */
+        margin-top: 10rem; /* Adds a top margin of 5rem */
+        
+    }
+    
+    .contact-info {
+        
+        background: rgba(0, 0, 0, 0.2); /* Applies a semi-transparent white background */
+        backdrop-filter: blur(10px); /* Adds a blur effect to the background, creating a glassmorphic effect */
+        border: 2px solid #FF69B4; /* Adds a solid cyan border around the element */
+        border-radius: 10px; /* Rounds the corners of the element */
+        padding: 20px; /* Adds padding inside the element */
+        text-align: center; /* Centers the text within the element */
+        width: 50%; /* Sets the width of the element to 50% of its containing element */
+        animation: fadeIn 0.5s ease-in-out; /* Adds a fade-in animation to the element */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for a floating effect */
+        box-shadow: 0px 20px 20px #000000;/* Adds a cyan glow effect around the element */
+    }
+    .contact-info p{
+        
+            display: block;
+            padding: 5px;
+            margin: 5px 0;
+            color: rgb(8, 6, 20);
+            text-decoration: none;
+            
+            
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            border-radius: 5px;
+            transition: 0.3s;
+        
+        
+    }
+    .contact-info p:hover {
+        color: black;
+        background: rgba(0, 255, 255, 0.2);
+        box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        transform: scale(1.05);
+        cursor: pointer;
+    }
+    .contact-info p a{
+        text-decoration: none;
+    }
+    
+    
+    .contact-menu h2 {
+        color: #ffffff; /* Sets the text color to white */
+        margin-bottom: 30px; /* Adds a 30px margin to the bottom of the element */
+    }
+    
+    .contact-close-btn {
+        cursor: pointer; /* Ensures the cursor changes to pointer when hovering */
+        position: center; /* Positions the button absolutely within the .menu-content element */
+        top: 0.5rem; /* Positions the button 0.5rem from the top of the .menu-content element */
+        right: 45rem; /* Positions the button 45rem from the right of the .menu-content element */
+        font-size: 50px; /* Sets the font size of the button text */
+        color: rgb(255, 0, 0); /* Sets the text color to white */
+    }
+    .contact-close-btn:hover{
+        text-shadow: 0px 20px 20px rgb(255, 0, 0);
+        color: black;
+        transition: 1s
+    }
+    
+    .marquee-container {
+        top: 20rem; /* Positions the container 20rem from the top of its nearest positioned ancestor */
+        position: center; /* Positions the container absolutely within its containing element */
+        width: 25%; /* Sets the container's width to 30% of its containing element */
+        height: 12.5%; /* Sets the container's height to 10% of its containing element */
+        overflow: hidden; /* Hides any content that overflows beyond the container’s boundaries */
+        border: 5px solid transparent; /* Adds a transparent border with a width of 5px */
+        padding: 10px; /* Adds padding inside the container */
+        background: rgba(0, 0, 0, 0.2); /* Applies a semi-transparent white background */
+        backdrop-filter: blur(10px); /* Adds a blur effect to the background, creating a glassmorphic effect */
+        animation: glow 2s infinite alternate; /* Applies the 'glow' animation with a 3-second duration, alternating infinitely */
+        border-radius: 30px; /* Rounds the corners of the container with a radius of 30px */
+        box-shadow: 0 0 10px #FF69B4; /* Adds a box shadow for depth */
+    }
+    
+    .marquee-text {
+        position: center;
+        text-align: center;
+        font-size: 2em;
+        font-weight: bold;
+        color: #ffffff;
+        text-shadow: 0 0 10px #FF69B4;
+        animation: marquee 5s linear infinite;
+        bottom: 80rem;
+    }
+    
+    @keyframes marquee {
+        from { transform: translateX(100%); }
+        to { transform: translateX(-100%); }
+    }
+    
+    @keyframes glow {
+        0%, 100% {
+            border-color: transparent;
+            box-shadow: none;
+        }
+        10%, 90% {
+            border-color: #FF69B4;
+            box-shadow: 0 0 10px #FF69B4, 0 0 20px #FF69B4;
+        }
+    }    

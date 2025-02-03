@@ -1,0 +1,148 @@
+<!DOCTYPE html> <!-- Define the document type as HTML -->
+<html lang="en"> <!-- Set the language of the document to English -->
+<head>
+    <!-- Metadata for character encoding and viewport settings -->
+    <meta charset="UTF-8"> <!-- Specify character encoding as UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensure proper rendering and touch zooming on mobile devices -->
+
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="style.css"> <!-- Link to the external CSS file for styling -->
+
+    <!-- Link to the external JavaScript file -->
+    <script src="script.js"></script> <!-- Link to the external JavaScript file for scripting -->
+
+    <!-- Title of the document -->
+    <title>GAME-HUB</title> <!-- Set the title of the document -->
+
+    <!-- Script for Lottie animations -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> <!-- Include Lottie animations script -->
+
+    <!-- Link to the Google Fonts stylesheet for the Orbitron font -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet"> 
+    <!-- Link to the google verified ownership wensite -->
+    <meta name="google-site-verification" content="RLMFlz3pTlNnp0XoDMuz8kKDZ9B-DvKZgatilztILY0" />
+</head>
+<body>
+    <!-- Navigation bar with buttons for different sections -->
+    <nav class="navbar">
+        <ul class="but">
+            <li><button onclick="openUpcoming()">Upcoming Releases</button></li> <!-- Button to open Upcoming Releases section -->
+            <li><button onclick="openMenu()">Game Library</button></li> <!-- Button to open Game Library section -->
+            <li><button onclick="openAbout()">About Us</button></li> <!-- Button to open About Us section -->
+            <li><button onclick="openContact()">Contact Us</button></li> <!-- Button to open Contact Us section -->
+        </ul>
+    </nav>
+
+    <!-- Upcoming games section -->
+    <div id="upcoming-game" class="upcoming-menu"> <!-- Div for the Upcoming Games section with a unique ID -->
+        <div class="upcoming-content">
+            <!-- Close button for the upcoming section -->
+            <span class="upcoming-close-btn b3" onclick="closeUpcoming()">&times;</span> <!-- Button to close the upcoming section -->
+            <h2> Coming Soon: New Game Releases </h2>
+            <div class="upcoming-game-list">
+                <ul>
+                    <li><a href="https://gamehubrival.github.io/Upcoming-Games-Hub/">GAME-RIVAL</a></li> <!-- Link for Upcoming GAME-1 -->
+                    <!--<li><a href="#">GAME-2</a></li>--> <!-- Link for Upcoming GAME-2 -->
+                </ul>
+            </div>
+            <p> 
+                Stay ahead of the curve with our upcoming game releases! 
+                We're working hard to bring you the most thrilling and innovative gaming experiences. 
+                Get ready for exciting new titles like GAME-1 and GAME-2, launching soon. 
+                These games will feature stunning graphics, 
+                captivating storylines, 
+                and unique gameplay mechanics that will keep you hooked. 
+                Don't miss out on the opportunity to be among the first to play by pre-ordering your favorite upcoming games and enjoying exclusive in-game rewards. 
+                Join our vibrant community of gamers, 
+                and stay connected for the latest updates and behind-the-scenes content. 
+                Keep an eye on this space for more thrilling announcements and get ready to dive into the next big adventure! 
+                🌟🚀
+            </p>
+        </div>
+    </div>
+
+    <!-- Game menu -->
+    <div id="game-menu" class="menu"> <!-- Div for the Game menu with a unique ID -->
+        <div class="menu-content">
+            <!-- Close button for the menu -->
+            <span class="close-btn" onclick="closeMenu()">&times;</span> <!-- Button to close the menu -->
+            <h2><i>🌟 Explore Our Game Collection 🌟</i></h2>
+            <ul>
+                <li><a href="https://gamehubrival.github.io/FlappyBird/">Flappy-Bird</a></li> <!-- Link for GAME-1 -->
+                <li><a href="https://gamehubrival.github.io/DOODLEJUMP/">Doodle-Jump</a></li> <!-- Link for GAME-2 -->
+                <li><a href="https://gamehubrival.github.io/Planet-Defence/">Planet-Defence</a></li> <!-- Link for GAME-3 -->
+                <li><a href="https://gamehubrival.github.io/SnakeGms/">Snake</a></li> <!-- Link for GAME-4 -->
+                <li><a href="https://gamehubrival.github.io/Colour-Blast/">Colour-Blast</a></li> <!-- Link for GAME-5 -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- About section -->
+    <div id="game-about" class="about"> <!-- Div for the About section with a unique ID -->
+        <div class="about-content">
+            <!-- Close button for the about section -->
+            <span class="about-close-btn b3" onclick="closeAbout()">&times;</span> <!-- Button to close the about section -->
+            <h2> About Us </h2>
+            <p><i>Welcome to Game Hub, a project by Group-3, where we bring together exciting web games for everyone to enjoy!<br>
+
+                We are a team of four passionate students who love gaming and web development. Our goal is to create a platform where users can play multiple games in one place with a smooth and engaging experience.<br>
+                
+                Meet Our Team:<br><span class="about-team">
+                [NIKHIL KU. BHOI] – <span class="about-team-role">Developer (Handles coding, logic, and functionality)</span><br>
+                [VIKARAM TRIPATHI] –<span class="about-team-role"> UI/UX Designer (Designs the website layout and styling))</span><br>
+                [CHIRANJIBI NAIK] – <span class="about-team-role">Content Manager (Writes text, game descriptions, and updates)</span><br>
+                [PRIYARANJAN AGHARAI] – <span class="about-team-role">Tester & Debugger (Tests and fixes bugs in the games)</span><br>
+            </span>
+               
+                🌟</i></p>
+        </div>
+    </div>
+
+    <!-- Contact section -->
+    <div id="contact-game" class="contact-menu"> <!-- Div for the Contact section with a unique ID -->
+        <div class="contact-info">
+            <!-- Close button for the contact section -->
+            <span class="contact-close-btn b3" onclick="closeContact()">&times;</span> <!-- Button to close the contact section -->
+            <h2 style="font-family: 'Orbitron', sans-serif;"> Contact Us </h2>
+            <p>For inquiries, feedback, or support, please reach out to us through the following channels:</p>
+            <p>Email:<br>
+                General Inquiries/Technical Support: gamehubrival2025@gmail.com<br> <!-- Email for general inquiries/technical support-->
+                </p> 
+            <p>Phone:<br>
+                Customer Service: +91-8917439930<br> <!-- Phone number for customer service -->
+                Technical Support: +91-6371431551</p> <!-- Phone number for technical support -->
+           
+            <p>Social Media:<br>
+                Stay connected and engage with us on social media:<br>
+                
+                Twitter/X:<a href="https://x.com/GAME_HUB_RIVAL"> @GamingSite</a><br> <!-- Link to Twitter profile -->
+                Instagram:<a href="https://www.instagram.com/game_hub25/"> @GamingSite_Official</a></p> <!-- Link to Instagram profile -->
+        </div>
+    </div>
+
+    <!-- Marquee container for the game hub title -->
+    <div class="marquee-container">
+        <h1 class="game-hub border2 marquee-text">🎮GAME-HUB-RIVAL🎮</h1> <!-- Marquee text for the game hub title -->
+    </div>
+
+    <!-- Lottie animation player for the first animation -->
+    <lottie-player class="game-pad"
+        src="Animation - 1738320022261.json"
+        background="transparent"
+        speed="1"
+        style="width: 300px; height: 300px;"
+        loop
+        autoplay>
+    </lottie-player>
+
+    <!-- Lottie animation player for the second animation -->
+    <lottie-player class="game-pad-2"
+        src="girlanddog.json"
+        background="transparent"
+        speed="1"
+        style="width: 300px; height: 300px;"
+        loop
+        autoplay>
+    </lottie-player>
+</body>
+</html> <!-- End of the HTML document -->
